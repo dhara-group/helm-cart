@@ -1,4 +1,4 @@
-apiVersion: v2
+apiVersion: v1
 description: Generic application chart
 name: app
 type: application
