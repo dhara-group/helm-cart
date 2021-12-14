@@ -1,0 +1,14 @@
+name: sample
+
+image:
+  repository: repo
+  name: name
+  tag: v1
+
+service:
+  port: 80
+  targetPort: 8080
+
+ingress:
+  host: example.com
+  path: /

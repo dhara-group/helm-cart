@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1beta1
+kind: Ingress
+metadata:
+  name: {{ .Values.name }}
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    ingress.gcp.kubernetes.io/pre-shared-cert: "daradashcert"
+spec:
+  rules:
+    - host: {{ .Values.ingress.host }}
+      http:
+        paths:
+          - path: {{ .Values.ingress.path }}
+            backend:
+              serviceName: {{ .Values.name }}
+              servicePort: {{ .Values.service.port }}
